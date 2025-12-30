@@ -9,12 +9,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* 外部GIF背景 */
-    body {
-      background: url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBoZWMwM29ldHdyc2I2MmZ0NDk2aGF0NmozeWpxdTlmbDF5dGJzMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y3vOCrBdlzdLgdb157/giphy.gif")
-                  center / cover no-repeat fixed;
-    }
-
     /* ネオン発光アニメ */
     @keyframes glow {
       0% {
@@ -40,7 +34,13 @@
   </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center text-white">
+<body class="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+
+  <!-- 背景動画 -->
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
+    <source src="bg.webm" type="video/webm">
+    <!-- フォールバック -->
+  </video>
 
   <!-- 暗幕オーバーレイ -->
   <div class="absolute inset-0 bg-black/25"></div>
