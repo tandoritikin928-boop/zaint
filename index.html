@@ -1,94 +1,48 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>script community</title>
-
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    /* ネオン発光アニメ */
-    @keyframes glow {
-      0% {
-        text-shadow:
-          0 0 6px rgba(168,85,247,0.5),
-          0 0 14px rgba(168,85,247,0.4);
-      }
-      50% {
-        text-shadow:
-          0 0 14px rgba(168,85,247,1),
-          0 0 32px rgba(168,85,247,0.8);
-      }
-      100% {
-        text-shadow:
-          0 0 6px rgba(168,85,247,0.5),
-          0 0 14px rgba(168,85,247,0.4);
-      }
+    body {
+      background: url("./bg.gif") center / cover no-repeat fixed;
     }
 
-    .neon {
-      animation: glow 2.5s ease-in-out infinite;
+    @keyframes glow {
+      0% { text-shadow: 0 0 6px rgba(168,85,247,0.5), 0 0 14px rgba(168,85,247,0.4); }
+      50% { text-shadow: 0 0 14px rgba(168,85,247,1), 0 0 32px rgba(168,85,247,0.8); }
+      100% { text-shadow: 0 0 6px rgba(168,85,247,0.5), 0 0 14px rgba(168,85,247,0.4); }
     }
+
+    .neon { animation: glow 2.5s ease-in-out infinite; }
   </style>
 </head>
-
 <body class="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
-
-  <!-- 背景動画 -->
-  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
-    <source src="bg.webm" type="video/webm">
-    <!-- フォールバック -->
-  </video>
 
   <!-- 暗幕オーバーレイ -->
   <div class="absolute inset-0 bg-black/25"></div>
 
   <!-- メインカード -->
-  <div class="relative z-10 backdrop-blur-xl bg-white/10
-              border border-white/20 rounded-2xl
-              p-10 w-[360px] text-center
-              shadow-[0_0_40px_rgba(168,85,247,0.35)]">
+  <div class="relative z-10 backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-10 w-[360px] text-center shadow-[0_0_40px_rgba(168,85,247,0.35)]">
 
-    <!-- タイトル -->
-    <h1 class="text-3xl font-bold mb-2 tracking-widest neon">
-      script
-    </h1>
+    <h1 class="text-3xl font-bold mb-2 tracking-widest neon">script</h1>
+    <p class="text-gray-300 mb-8 text-sm">community invite</p>
 
-    <p class="text-gray-300 mb-8 text-sm">
-      community invite
-    </p>
-
-    <!-- LINE -->
-    <a
-      href="https://line.me/ti/g2/ctACQKVIXgkV5Hp0U5qESr3dGxIo-cuqx95cuQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-      target="_blank"
-      class="block mb-4 py-3 rounded-xl
-             bg-gradient-to-r from-green-500 to-emerald-400
-             hover:from-green-400 hover:to-emerald-300
-             transition transform hover:-translate-y-1 hover:scale-[1.03]
-             shadow-[0_0_18px_rgba(34,197,94,0.7)]
-             font-semibold">
+    <a href="https://line.me/ti/g2/ctACQKVIXgkV5Hp0U5qESr3dGxIo-cuqx95cuQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+       target="_blank"
+       class="block mb-4 py-3 rounded-xl bg-gradient-to-r from-green-500 to-emerald-400 hover:from-green-400 hover:to-emerald-300 transition transform hover:-translate-y-1 hover:scale-[1.03] shadow-[0_0_18px_rgba(34,197,94,0.7)] font-semibold">
       LINE オープンチャット
     </a>
 
-    <!-- Discord -->
-    <a
-      href="https://discord.gg/y3phEYyy"
-      target="_blank"
-      class="block py-3 rounded-xl
-             bg-gradient-to-r from-indigo-500 to-purple-500
-             hover:from-indigo-400 hover:to-purple-400
-             transition transform hover:-translate-y-1 hover:scale-[1.03]
-             shadow-[0_0_20px_rgba(168,85,247,0.8)]
-             font-semibold">
+    <a href="https://discord.gg/y3phEYyy"
+       target="_blank"
+       class="block py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-400 hover:to-purple-400 transition transform hover:-translate-y-1 hover:scale-[1.03] shadow-[0_0_20px_rgba(168,85,247,0.8)] font-semibold">
       Discord サーバー
     </a>
 
-    <p class="mt-8 text-xs text-gray-400">
-      hosted on Vercel
-    </p>
+    <p class="mt-8 text-xs text-gray-400">hosted on Vercel</p>
   </div>
 
 </body>
